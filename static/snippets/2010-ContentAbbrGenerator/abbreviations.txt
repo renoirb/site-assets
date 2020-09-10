@@ -1,0 +1,123 @@
+/**
+ * Name: abbreviations.txt
+ * Usage: Definition list file
+ * Description: Used with ContentAbbrGenerator to replace in-content known abbreviation into automagically generated abbr tags
+ * 
+ * Types possibles: 
+ *   * acronym, un terme informatique
+ *   * abbr, pour remplacer une abbreviation
+ *   * dfn, pour fournir une courte définition sur un terme
+ *
+ *  ... vous fier aux exemples
+ * 
+ * @author: Renoir Boulanger <lunique@renoirboulanger.com>
+ * date 2008-08-15
+ * 
+ * Syntax: lang(required);type(required);WORD(capitalized, required);title(required);definition_language(optionnal)
+ *
+ * Examples:
+ * fr;acronym;CSS;Cascading Style Sheet;en
+ * fr;acronym;BI;Acronyme anglophone pour Intelligence d'Affaires
+ **/
+fr;dfn;FAQ;Foire Aux Questions
+fr;dfn;Snippet;Un bout de code PHP utilisé par MODx;fr
+fr;dfn;Chunk;Un bout de code html utilisé par MODx;fr
+fr;dfn;ISO 17799;Standard en sécurité de de l'information;fr
+fr;dfn;SCRUM;Pas de définition réelle. Consiste en une approche de méthodologie de développement logiciel Agile;fr
+fr;dfn;IIS;Serveur http de Microsoft signifiant Internet Information Services
+fr;dfn;TOGAF;he Open Group Architecture Framework (TOGAF) is a framework for Enterprise Architecture which provides a comprehensive approach to the design;en
+fr;acronym;JS;Acronyme de Java Script;fr
+fr;acronym;API;Acronyme anglophone pour Interface de programmation;fr
+fr;acronym;CSS;Cascading Style Sheet;en
+fr;acronym;SOA;Service Oriented Architecture;en
+fr;acronym;TI;Technologies de l'Information;fr
+fr;acronym;ISO;International Organization for Standards;en
+fr;acronym;B2C;Acronyme anglophone pour Entreprise au Commerce;fr
+fr;acronym;B2B;Acronyme anglophone pour Entreprise a l'Entreprise;fr
+fr;acronym;EDI;Electronic Data Interchange;en
+fr;acronym;UML;Unified Markup Language;en
+fr;acronym;J2EE;Java 2 Enterprise Environnement;en
+fr;acronym;PHP;Processor Hypertex Pre-Processor;en
+fr;acronym;CVS;Current Versionning System;en
+fr;acronym;AJAX;Asynchroneus Javascript And XML;en
+fr;acronym;XML;eXtended Markup Language;en
+fr;acronym;QA;Quality Assurance;en
+fr;acronym;BO;Business Object;en
+fr;acronym;BI;Acronyme anglophone pour Intelligence d'Affaires;fr
+fr;acronym;IBM;International Business Machines, IBM Inc.;en
+fr;acronym;XP;eXtreme Programming;en
+fr;acronym;EAI;Enterprise Application Integration;en
+fr;acronym;ESB;Acronyme anglophone pour Bus de Services d'Entreprise;fr
+fr;acronym;J2EE;Java 2 Enterprise Edition;en
+fr;acronym;GPS;Global Positioning System;en
+fr;acronym;ROI;Acronyme anglophone pour Retour sur Investissement;fr
+fr;acronym;ETL;Extract Transform and Load;en
+fr;acronym;EPS;Encapsulated Post Script;en
+fr;acronym;PSD;Format éditable Photoshop PSD;fr
+fr;acronym;JPG;Image Photographique JPEG;fr
+fr;acronym;PDF;Format Adobe PDF;fr
+fr;acronym;MDA;Model Driven Architecture;en
+fr;acronym;CMS;Acronyme anglophone signifiant Gestionnaire de Contenu;fr
+fr;acronym;CD;Acronyme anglophone pour Disque compact;fr
+fr;acronym;GUI;Acronyme anglophone pour Interface Graphique Utilisateur;fr
+fr;acronym;HTML;Hyper Text Markup Language;en
+fr;acronym;WCAG;Web Content Accessibility Guidelines;en
+fr;acronym;JSP;Java Server Pages;en
+fr;acronym;PNG;Portable Network Graphics;en
+fr;acronym;SOAP;Simple Object Access Protocol;en
+fr;acronym;SQL;Structured Query Language (a database standard);en
+fr;acronym;W3C;World Wide Web Consortium;en
+fr;acronym;XHTML;eXtensible HyperText Markup Language - HTML reformulated as XML;en
+fr;acronym;XML;eXtensible Markup Language;en
+fr;acronym;XSL;eXtensible Stylesheet Language;en
+fr;acronym;XSLT;eXtensible Stylesheet Language Transformation;en
+fr;acronym;CMF;Content Management Framework;en
+en;dfn;FAQ;Frequently Asked Questions
+en;dfn;Snippet;Some PHP Code implemented into MODx
+en;dfn;Chunk;A Chunk of html code implemented into MODx
+en;dfn;ISO 17799;An Internationnal standard in Information Security
+en;dfn;SCRUM;No real definition, an approach to Agile Software development
+en;acronym;JS;Javascript Acronym
+en;acronym;API;Application Programming Interface
+en;acronym;CSS;Cascading Style Sheet
+en;acronym;SOA;Service Oriented Architecture
+en;acronym;ISO;International Organization for Standards
+en;acronym;B2C;Business to Consumer
+en;acronym;B2B;Business to Business
+en;acronym;EDI;Electronic Data Interchange
+en;acronym;UML;Unified Markup Language
+en;acronym;J2EE;Java 2 Enterprise Environement
+en;acronym;PHP;Processor Hypertex Pre-Processor
+en;acronym;CVS;Current Versionning System
+en;acronym;AJAX;Asynchroneus Javascript And XML
+en;acronym;XML;eXtended Markup Language
+en;acronym;QA;Quality Assurance
+en;acronym;BO;Business Object
+en;acronym;BI;Business Intelligence
+en;acronym;XP;eXtreme Programming
+en;acronym;EAI;Enterprise Application Integration
+en;acronym;ESB;Enterprise Service Bus
+en;acronym;J2EE;Java 2 Enterprise Edition
+en;acronym;GPS;Global Positioning System
+en;acronym;ROI;Acronyme anglophone pour Retour sur Investissement
+en;acronym;ETL;Extract Transform and Load
+en;acronym;EPS;Encapsulated Post Script
+en;acronym;PSD;Format éditable Photoshop PSD
+en;acronym;JPG;Image Photographique JPEG
+en;acronym;PDF;Format Adobe PDF
+en;acronym;MDA;Model Driven Architecture
+en;acronym;CMS;Content Management System
+en;acronym;CD;Compact Disc
+en;acronym;GUI;Graphical User Interface
+en;acronym;HTML;Hyper Text Markup Language
+en;acronym;WCAG;Web Content Accessibility Guidelines
+en;acronym;JSP;Java Server Pages
+en;acronym;PNG;Portable Network Graphics
+en;acronym;SOAP;Simple Object Access Protocol
+en;acronym;SQL;Structured Query Language (a database standard)
+en;acronym;W3C;World Wide Web Consortium
+en;acronym;XHTML;eXtensible HyperText Markup Language - HTML reformulated as XML
+en;acronym;XML;eXtensible Markup Language
+en;acronym;XSL;eXtensible Stylesheet Language
+en;acronym;XSLT;eXtensible Stylesheet Language Transformation
+en;acronym;CMF;Content Management Framework

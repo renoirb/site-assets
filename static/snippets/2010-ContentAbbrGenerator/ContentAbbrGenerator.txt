@@ -1,0 +1,125 @@
+//<?php
+/**
+ * Name: ContentAbbrGenerator
+ * Description: <strong>svn:/site/Views/Plugins/</strong> - Replaces every word with those defined from an external file, requires <strong>Lang</strong>
+ *
+ * Required snippets: Lang
+ *
+ * @author Renoir Boulanger <lunique@renoirboulanger.com>
+ * @date 2008-08-15
+ *
+ * Plugin name: ContentAbbrGenerator
+ * Description: Reads a file for definition list then replaces found content with enclosing abbr tags
+ * Plugin configuration: &cagPluginAttrDefaultLang=Default Lang;text;fr &cagPluginAttrOverrideFileLoc=Definition list file location override (optionnal) or leave as default (empty) (it will search for current docroot /abbreviations.txt);text;
+ *
+ * IMPORTANT:
+ *  File MUST BE at
+ *	 /abbreviations.txt
+ *  on the same siter, search 'abbreviations.txt' and correct the new path
+
+ * Have you ever wanted to do not hassle with <abbr title="Hyper Text Markup Language">HTML</abbr>
+ * <abbr title="Abbreviation">abbr</abbr> tags but was too lazy to hand-code them all!? That is
+ * My solution :)
+ *
+ * INSPIRATION
+ *  * http://www.coleo.fr/category/modx-revolution/
+ *  * http://modxcms.com/forums/index.php/topic,4266.0.html
+ *  * http://wiki.modxcms.com/index.php/API:Document_(System_Event)#OnDocFormRender
+ *  * http://www.modxcms.com/the-document-object.html
+ *  * http://modxcms.com/plugin-examples.html
+ *  * http://www.huddledmasses.org/wp-content/plugins/source.php?file=acronyms.php
+ *  * http://ma.tt/scripts/acronymit/
+ *
+ * Installation:
+ *
+ * no parameters
+ *
+ *  1. Verify the config
+ *  2. Check if the snippet pageClassName exists
+ **/
+
+
+/**
+ * The actual plugin!
+ */
+$e = &$modx->Event;
+switch ($e->name) {
+ case 'OnWebPagePrerender':
+
+// Make sure it runs only on html pages!
+if(preg_match('/html/', $modx->documentObject[contentType])){
+
+	/* ****** Start of the functions ****** */
+	function cagArryGetDefinitions($langCode){
+
+		// IMPORTANT, the abbreviation file path from plugin configuration
+		$cagpaofl = ($GLOBALS['cagPluginAttrOverrideFileLoc']) ? $GLOBALS['cagPluginAttrOverrideFileLoc'] : '';
+		$cagFileUri = (!$cagpaofl) ? 'abbreviations.txt' : $cagpaofl;
+
+		$fh = fopen($cagFileUri, 'r') or die('Cannot read abbreviations.txt');
+		$contents = @fread($fh, filesize($cagFileUri)) or exit;
+
+		if($fh){
+	      $cagArryFileElements = explode("\n", $contents);
+		}
+
+		#print_r($cagArryFileElements);
+		#die('ok, there is lines in the file');
+
+		foreach($cagArryFileElements as $line => $element){
+			if(preg_match('/^\b'.$langCode.'\b/', $element)){
+				list($currlang, $type, $word, $title, $deflang) = explode(';', $element);
+			  	$buildup[$word] = array('type'=> $type, 'title'=> $title, 'deflang'=> $deflang);
+			}
+		}
+
+		#print_r($buildup);
+		#die('ok, there is lines in the file');
+
+		return $buildup;
+	}
+	$getLang = $modx->runSnippet("Lang");
+	$getLang = ($getLang) ? $getLang :  $cagPluginAttrDefaultLang;
+	$cagArryDef = cagArryGetDefinitions($getLang);
+	if($cagArryDef){
+		#die('Killed at line:'.__LINE__);
+
+		function tag_maker($input,$values){
+			$cagStrLang = ($values[lang] != '') ? ' lang="'.$values[lang].'"' : '';
+			return '<'.$values[type].' title="'.$values[title].'"'.$cagStrLang.' class="ContentAbbrGenerator">'.$input.'</'.$values[type].'>';
+		}
+
+		function acronyms($text,$definitions) {
+		  /**
+		   * Origins in part from:
+		   *   Plugin Name: acronyms() aka. Acronym Replacer
+		   *   Version: 2.8
+		   *   Plugin URI: http://www.huddledmasses.org/
+		   *   Author: Joel Bennett
+		   *
+		   * Copyright (c) 2003
+		   * Released under the GPL license
+		   * http://www.gnu.org/licenses/gpl.txt
+		   **/
+
+		   $text = " $text ";
+
+		   foreach($definitions as $element => $values) {
+		     $text = preg_replace("|(?!<[^<>]*?)(?<![?./&])\b$element\b(?!:)(?![^<>]*?>)|imsU", call_user_func_array('tag_maker', array($element, $values)), $text);
+		   }
+		   return trim($text);
+		}
+		/* ****** End of the functions ****** */
+
+
+	   // The actual run
+	   $cagDocumentOutput = $modx->documentOutput;
+	   $modx->documentOutput = acronyms($cagDocumentOutput,$cagArryDef);
+	}
+ }
+ break;
+
+ default:
+ return; // stop here - this is very important.
+ break;
+}
