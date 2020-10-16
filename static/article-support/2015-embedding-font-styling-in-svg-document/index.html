@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sweetie and Sweetie SVG embed test</title>
+    <style>
+      .wrappr {
+        margin: 20px auto;
+				width: 700px;
+      }
+			.wrappr section+section {
+				margin: 100px 0;
+				border-top: 2px solid #888;
+			}
+    </style>
+  </head>
+  <body>
+
+    <div class=wrappr>
+    <h1>Ways to use an SVG for a logo and handling text styling</h1>
+    <h2>In an img tag</h2>
+		<section>
+			<h3>Embeded font glyphs, CSS font face</h3>
+    	<img src="title.svg" alt="Gabriela and Renoir" title="alpha" />
+		</section>
+		<section>
+			<h3>Embeded font glyphs, using attributes</h3>
+    	<img src="title2.svg" alt="Gabriela and Renoir" title="bravo" />
+		</section>
+		<section>
+			<h3>Using outlines for each character</h3>
+    	<img src="title3.svg" alt="Gabriela and Renoir" title="charlie" />
+		</section>
+		<section>
+			<h3>Ideal case: Embeded glyphs, with CSS, as less code as possible</h3>
+    	<img src="title_manually_edited.svg" alt="Gabriela and Renoir" title="delta" />
+		</section>
+    <h2>Reference</h2>
+    <ul>
+      <li>http://frabru.de/c.php/article/SVGFonts-usage</li>
+      <li>http://nimbupani.com/about-fonts-in-svg.html</li>
+      <li>https://docs.webplatform.org/wiki/tutorials/using_text_in_svg</li>
+    </ul>
+    </div>
+  </body>
+</html>
