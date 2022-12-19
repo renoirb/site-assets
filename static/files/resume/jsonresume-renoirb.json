@@ -1,0 +1,751 @@
+{
+  "meta": {
+    "theme": "elegant",
+    "lastModified": "2020-08-31T17:39:60",
+    "canonical": "http://registry.jsonresume.org/renoirb",
+    "alternate": "https//renoirb.com/resume/detailed",
+    "source": "https://gist.github.com/renoirb/65fccabc7dea76fea70dccb14077ab0d#gistcomment-3010170"
+  },
+  "basics": {
+    "name": "Renoir Boulanger",
+    "label": "Full-Stack Developer & Senior Web Development Professional",
+    "image": "https://secure.gravatar.com/avatar/cbf8c9036c204fe85e15155f9d70faec?size=420",
+    "picture": "https://secure.gravatar.com/avatar/cbf8c9036c204fe85e15155f9d70faec?size=420",
+    "email": "hello@renoirboulanger.com",
+    "url": "https://renoirb.com",
+    "website": "https://renoirb.com",
+    "summary": "Experienced full-stack developer, I have a broad and deep understanding of the Open Web stack, Front-end and Server Techniques to build, deploy and maintain Web sites that scale.",
+    "location": {
+      "city": "Montréal",
+      "region": "Quebec",
+      "countryCode": "CA",
+      "postalCode": "H4P 2G9"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "renoirb",
+        "url": "https://linkedin.com/in/renoirb"
+      },
+      {
+        "network": "Twitter",
+        "username": "renoirb",
+        "url": "https://twitter.com/renoirb"
+      },
+      {
+        "network": "GitHub",
+        "username": "renoirb",
+        "url": "https://github.com/renoirb"
+      },
+      {
+        "network": "GitLab",
+        "username": "renoirb",
+        "url": "https://gitlab.com/renoirb"
+      },
+      {
+        "network": "Sourcerer",
+        "username": "renoirb",
+        "url": "https://sourcerer.io/renoirb"
+      }
+    ],
+    "highlights": [
+      "Polyglot programmer; JavaScript, PHP, TypeScript, Salt Stack, GNU Make, Python, Go, Ruby, Vagrant, Puppet",
+      "Contributor to open-source projects such as Nuxt.js, Alpine Linux, MediaWiki (i.e. Wikipedia.com) and Mozilla Firefox Accounts (i.e. Firefox’s profile sign-in system)",
+      "Maintained Web Hosting architecture for high-visibility sites, including W3C’s WebPlatform.org https://webplatform.github.io, and the World Wide Web’s 25th anniversary Site https://www.w3.org/webat25/",
+      "Experience with Cloud IaaS, Containers, and maintenance of continuous deployment systems"
+    ]
+  },
+  "work": [
+    {
+      "name": "RBC Royal Bank of Canada Inc.",
+      "company": "RBC Royal Bank of Canada Inc.",
+      "position": "Senior Full Stack Developer",
+      "location": "Montréal, QC, Canada",
+      "remote": true,
+      "contract": false,
+      "startDate": "2020-03-01",
+      "url": "https://www.rbcroyalbank.com",
+      "website": "https://www.rbcroyalbank.com",
+      "description": "Royal Bank of Canada is Canada’s largest bank, and one of the largest banks in the world, based on market capitalization. We have over 80,000 full- and part-time employees who serve more than 16 million personal, business, public sector and institutional clients through offices in Canada, the U.S. and 37 other countries.",
+      "summary": "I am a Senior Full-Stack Front-End developer to the RBC Omni (Online Business Banking). My daily tasks are about reviewing my colleague’s code, make technical recommendations, and contribute to building scalable and re-usable modules by collaborating with other production teams, including the design system/platform team. The code I write is targetted to run with Angular 8 in TypeScript 3.4.",
+      "highlights": [
+        "Re-Implement and improve link manager to legacy application system. So that the HTML templates contains a \"link id\", and how it dynamically creates an hidden form and properly redirects to legacy HTML views. Allowing to slim down many views that would also need hidden form that were re-implemented numerous times.",
+        "Revise and make migration strategies for my Squad’s Angular monorepo to use Jest and ESLint 7 along with Prettier with automated LintStaged commit hooks.",
+        "Implement advanced Angular data-driven patterns to guide my colleagues away from filling HTML templates and instead use classes to provide data. Including how to rewrite forms using FormGroups instead of template",
+        "Make module stubs for the Backend chapter to write Express.js middleware in isolation instead of from a monolith",
+        "Teach how to write and publish small packages and how to publish on Nexus",
+        "Written extensive onboarding documentation taking into account how to properly and automatically adjust developer tools at every password change. Avoiding popular \"ignore this error\" and rather use corporate signed TLS certificate right"
+      ],
+      "technologies": [
+        "Node.js",
+        "TypeScript",
+        "Angular",
+        "NX",
+        "JavaScript",
+        "HTML/CSS",
+        "Jest"
+      ]
+    },
+    {
+      "name": "CGI Inc.",
+      "company": "CGI Inc.",
+      "position": "Senior Technical Consultant (Lead Front-End)",
+      "location": "Montréal, QC, Canada",
+      "remote": false,
+      "contract": false,
+      "hidden": false,
+      "startDate": "2017-05-01",
+      "endDate": "2020-02-29",
+      "url": "https://www.cgi.com/en",
+      "website": "https://www.cgi.com/en",
+      "description": "CGI Inc. (NYSE GIB), provides information technology (IT) and business process services in Canada, Europe, the United States, and the Asia Pacific. Its services include the management of IT and business outsourcing, systems integration and consulting, and software solutions selling activities.",
+      "summary": "At CGI, I worked as a Technical Lead as part of the Global Technology Operations - Software Development Team. My role is to analyze and contribute to the development of a Cloud Management Platform named Unify360 at the User Interface level (e.g. Web, Email, Dashboard…), focussing on the aspects related to UI such as Internationalization (e.g. translation), Localization (e.g. Date, Number formatting) from how to read data from services, to assembling view patterns. Unify360 is composed by many “micro-services” where each component has a specific tasks. For example; Authentication, Session validation, Forms, Rendering Views, etc. Services can be written in Perl, PHP, .Net Core, ASP.Net/IIS, or Go.",
+      "highlights": [
+        "Lead the team that work and coach for writing code with tests, making self-contained and re-usable packages",
+        "Implement prototype for a modern Unify360 Front-End using Vue.js, Nuxt.js, TypeScript, GraphQL, Koa.js and planned how to migrate all views into new platform effectively replacing code written in Perl and PHP 5.3, and also replacing HTML partial Microservice;",
+        "Research and Technical Requirements Analysis for modernizing Unify360 UI layer. Made comparison between React, Angular, Vue.js and different UI Component Libraries such as Google Material Design, Element UI, Quasar;",
+        "Design and implement an HTML partial Microservice with PHP 7.2, Slim framework, Mustache PECL extension for a new section of Unify360 portal;"
+      ],
+      "technologies": [
+        "Node.js",
+        "Library transpilation and bundling Babel/Rollup",
+        "TypeScript",
+        "Nuxt.js",
+        "Vue.js",
+        "Vagrant",
+        "Koa.js",
+        "JavaScript",
+        "HTML/CSS",
+        "Sonatype Nexus",
+        "Mono repositories",
+        "GitLab",
+        "Alpine Linux",
+        "PHP 7.2",
+        "Slim Framework",
+        "GraphQL",
+        "AVA",
+        "Jest",
+        "Docker Swarm",
+        "Go",
+        "Perl"
+      ],
+      "contributions": [
+        {
+          "name": "egoist/bili",
+          "url": "https://github.com/egoist/bili/commits/master?author=renoirb"
+        },
+        {
+          "name": "nuxt.js/docs",
+          "url": "https://github.com/nuxt/docs/issues?utf8=%E2%9C%93&q=author%3Arenoirb"
+        },
+        {
+          "name": "alpinelinux/aports",
+          "url": "https://github.com/alpinelinux/aports/pulls?utf8=%E2%9C%93&q=author%3Arenoirb"
+        },
+        {
+          "name": "clarkdo/hare",
+          "url": "https://github.com/clarkdo/hare/issues?q=author%3Arenoirb"
+        },
+        {
+          "name": "composer/composer",
+          "url": "https://github.com/composer/composer/issues?utf8=%E2%9C%93&q=author%3Arenoirb"
+        },
+        {
+          "name": "graph-gophers/graphql-go",
+          "url": "https://github.com/graph-gophers/graphql-go/issues/151"
+        },
+        {
+          "name": "vue-i18n",
+          "url": "https://github.com/renoirb/issue-506-vue-i18n"
+        }
+      ]
+    },
+    {
+      "name": "AlayaCare",
+      "company": "AlayaCare",
+      "position": "Senior Software Developer",
+      "remote": false,
+      "contract": false,
+      "url": "https://www.alayacare.com",
+      "website": "https://www.alayacare.com",
+      "hidden": false,
+      "startDate": "2016-11-07",
+      "endDate": "2017-05-01"
+    },
+    {
+      "name": "6973051 Canada Inc.",
+      "client": "Colloquial / Betastream",
+      "company": "Colloquial / Betastream",
+      "position": "Delivery Engineering Architect (remote)",
+      "remote": true,
+      "contract": true,
+      "url": "http://colloquial.com/",
+      "website": "http://colloquial.com/",
+      "hidden": false,
+      "startDate": "2016-01-01",
+      "endDate": "2016-06-17",
+      "description": "The J. Walter Thompson Company (JWT) has teamed up with Group SJR, a unit of Hill+Knowlton Strategies, to launch a new content marketing unit called Colloquial. Headquartered at JWT’s New York office, Colloquial is primed to be the “the intersection of advertising, publishing and public relations, with storytelling and creativity at its core.”",
+      "summary": "At Colloquial, my role was to introduce and coach the team Continuous Delivery and Code release, and deployment system. I was part of a geographically distributed Web Development and IT team (\"Betastream\") working on projects for Colloquial and other partner projects. My responsibilities were to review, plan, and build a next-generation infrastructure and deployment system for the project production pipeline.",
+      "highlights": [
+        "Released a Cloud Orchestration solution using Salt Stack, running on Amazon AWS, Google Cloud Platform and Microsoft Azure, where we can manage automatically Web Applications, deployment levels, build steps and dependencies consistently;",
+        "Introduced HashiCorp Vagrant workflow to automatically manage Web Developer’s PHP setup using VirtualBox and Canonical Ubuntu Linux 16.04 LTS. By doing so, every developer got the same Web Server setup as in production;",
+        "Introduced automated packaging for every WordPress projects, by leveraging Composer’s archive feature. The automated build process would first pull all dependencies, run code-quality linters, and if successful, create a Zip archive. By merging on master on Bitbucket would generate an archive, and the continuous-delivery system make all web server nodes to download the archive, extract its contents in a folder. Deploying a release would be changing the \"live\" symbolic to the newly extracted package;",
+        "Introduced advanced Varnish caching with Fastly. Created HashiCorp Vagrant workspace network (e.g. one Web Server VM, one Database server, one Varnish VM) to allow working on Varnish VCL caching scripts."
+      ],
+      "technologies": [
+        "SaltStack",
+        "Vagrant",
+        "GCP",
+        "Azure",
+        "AWS",
+        "EC2",
+        "RDS",
+        "CloudFlare",
+        "Monit",
+        "Jenkins",
+        "Python",
+        "WordPress",
+        "Varnish",
+        "SysDig"
+      ]
+    },
+    {
+      "name": "6973051 Canada Inc.",
+      "client": "CAE",
+      "company": "CAE",
+      "position": "Delivery Engineering Architect",
+      "location": "Montréal, QC, Canada",
+      "remote": false,
+      "contract": true,
+      "url": "https://www.cae.com/",
+      "website": "https://www.cae.com/",
+      "hidden": false,
+      "startDate": "2016-03-01",
+      "endDate": "2016-06-01",
+      "description": "CAE is a global leader in training for the civil aviation, defence and security, and healthcare markets. Backed by a record of more than 70 years of industry firsts, we continue to help define global training standards with our innovative virtual-to-live training solutions to make flying safer.",
+      "summary": "At CAE, my role was to introduce and coach the team Continuous Delivery and Code release, and deployment system. I was working on-site as a part-time contract and been asked to analyze and document for recommending an Open-Source real-time monitoring solution. During that period, I compared Prometheus, Heka, Ganglia, Grafana, ElasticSearch Kibana, and other TimeSeries aggregation and visualization systems. The ideal system had to take into account the air-tight networking policies which included corporate TLS certificate, and deployment targets would often be inaccessible to the Internet.",
+      "highlights": [
+        "Introduced a method to maintain network of Virtual Machines with HashiCorp Vagrant leveraging VirtualBox private networking",
+        "Created a \"poor man\" configuration management using Bash 4 as a way to avoid using text files."
+      ],
+      "technologies": [
+        "Monit",
+        "Vagrant",
+        "Prometheus",
+        "Ganglia",
+        "LibreSSL",
+        "ElasticSearch Kibana",
+        "Beats",
+        "LogStash",
+        "Python",
+        "Grafana",
+        "Mozilla Heka",
+        "InfluxDB Telegraf"
+      ]
+    },
+    {
+      "name": "6973051 Canada Inc.",
+      "client": "Mozilla",
+      "company": "Mozilla",
+      "position": "Subject Matter Expert Compatibility Data Project (remote)",
+      "remote": true,
+      "contract": true,
+      "url": "https://developer.mozilla.org",
+      "website": "https://developer.mozilla.org",
+      "hidden": false,
+      "startDate": "2015-08-01",
+      "endDate": "2016-01-01",
+      "description": "Mozilla is a global, nonprofit organization dedicated to making the Web better. We emphasize principle over profit and believe that the Web is a shared public resource to be cared for, not a commodity to be sold. We work with a worldwide community to create open source products like Mozilla Firefox, and to innovate for the benefit of the individual and the betterment of the Web.",
+      "summary": "At Mozilla, my role was to provide an oversight of the development and participate in software architecture discussions as a subject matter expert on the Mozilla Developer Network Compatibility Data project. The Compatibility Data are what feeds developer.mozilla.org documentation pages telling developers if the feature is supported in a given Web Browser. My involvement was around communicating with various stakeholders about the requirements and features for the system.",
+      "highlights": [
+        "Created a client-side DataTable rendering system with Vanilla JavaScript",
+        "Prototyped a file-based Compatibility data storage"
+      ]
+    },
+    {
+      "name": "6973051 Canada Inc.",
+      "client": "W3C/MIT",
+      "company": "W3C/MIT",
+      "position": "Developer Operations Engineer (i.e. \"DevOps\")",
+      "remote": true,
+      "contract": true,
+      "url": "https://www.w3.org/People/Alumni#Boulanger",
+      "website": "https://www.w3.org/People/Alumni#Boulanger",
+      "hidden": false,
+      "startDate": "2013-08-01",
+      "endDate": "2015-08-01",
+      "description": "The World Wide Web Consortium (W3C) is an international community where Member organizations, a full-time staff, and the public work together to develop Web standards. Led by Web inventor and Director Tim Berners-Lee and CEO Jeffrey Jaffe, W3C’s mission is to lead the Web to its full potential.",
+      "summary": "At W3C, my role was to maintain stability, improve features, strengthen the infrastructure of the site, and act as a technical liaison with Open-source communities. The WebPlatform Docs project was meant to become an independent Web Developer documentation site maintained by an international community of contributors, sponsored by Adobe, Apple, DreamHost, Fastly, Facebook, Google, Intel, Mozilla, Microsoft, Nokia, and Opera.",
+      "highlights": [
+        "Converted content and history from MediaWiki into Static site generators and Git (2015)",
+        "Improved Infrastructure deployment code so that any service could be rebuilt systematically (2015)",
+        "Implemented a self-healing monitoring (2015)",
+        "Designed and Implemented Single Sign-On solution using OAuth2 (2014)",
+        "Designed and built a Web Browser feature compatibility table system for documentation pages (2014)",
+        "Migrated the infrastructure to different providers along with Operating-System upgrades (2013, 2015)"
+      ],
+      "contributions": [
+        {
+          "name": "webplatform/ops",
+          "url": "https://github.com/webplatform/ops"
+        },
+        {
+          "name": "renoirb/salt-basesystem",
+          "url": "https://github.com/renoirb/salt-basesystem"
+        },
+        {
+          "name": "webplatform/salt-states",
+          "url": "https://github.com/webplatform/salt-states"
+        },
+        {
+          "name": "renoirb/mediawiki-conversion",
+          "url": "https://github.com/renoirb/mediawiki-conversion"
+        },
+        {
+          "name": "webplatform/content-converter",
+          "url": "https://github.com/webplatform/content-converter"
+        },
+        {
+          "name": "webplatform.github.io/docs/WPD/Projects/SSO",
+          "url": "https://webplatform.github.io/docs/WPD/Projects/SSO/"
+        },
+        {
+          "name": "webplatform.github.io/docs/WPD/Projects/CompaTables",
+          "url": "https://webplatform.github.io/docs/WPD/Projects/CompaTables/"
+        }
+      ],
+      "technologies": [
+        "Salt Stack",
+        "PHP",
+        "JavaScript",
+        "HTML/CSS",
+        "Node.js",
+        "Docker",
+        "Vagrant",
+        "Python",
+        "Redis",
+        "ElasticSearch",
+        "OpenStack Nova, Cinder, Horizon, Swift",
+        "Memcached",
+        "Fastly",
+        "Gerrit",
+        "Monit",
+        "Backbone.js",
+        "Express.js",
+        "NGINX",
+        "MySQL",
+        "DNS Bind",
+        "MediaWiki",
+        "WordPress",
+        "Hypothes.is",
+        "Discourse",
+        "SASS",
+        "Bower",
+        "Gulp"
+      ]
+    },
+    {
+      "name": "6973051 Canada Inc.",
+      "client": "Ericsson",
+      "company": "Ericsson",
+      "position": "Web Developer",
+      "location": "Montréal, QC, Canada",
+      "remote": false,
+      "contract": true,
+      "url": "https://www.ericsson.com/en",
+      "website": "https://www.ericsson.com/en",
+      "hidden": false,
+      "startDate": "2012-02-01",
+      "endDate": "2013-06-01",
+      "summary": "The goal of the project at Ericsson was to create a server on demand provision portal managing cloud computing clusters hosted in data centers geographically dispersed. My role was to architect, build and lead a Web-based virtualization provisioning portal. A key feature I worked on was to allow users to initiate VMs from any data centers, on any cloud provider platforms.",
+      "highlights": [],
+      "technologies": [
+        "Vagrant",
+        "Symfony2",
+        "PHP",
+        "Puppet",
+        "JavaScript",
+        "VMWare ESXi",
+        "HTML/CSS",
+        "MySQL",
+        "OpenStack Grizzly",
+        "Git",
+        "Twitter Bootstrap",
+        "LESSCSS",
+        "jQuery"
+      ]
+    },
+    {
+      "name": "Evocatio Solutions technologiques Inc.",
+      "company": "Evocatio Solutions technologiques Inc.",
+      "position": "Web Developer, Co-Founder",
+      "location": "Montréal, QC, Canada",
+      "remote": false,
+      "contract": false,
+      "hidden": false,
+      "startDate": "2010-01-01",
+      "endDate": "2012-03-01",
+      "description": "Co-founded Evocatio Solutions technologies Inc. with two old friends. Our partnership lasted 2 years and at the peak we had 10 employees on our payroll, some of our work won prizes in local industry competitions and other projects got deployed in cities around the globe. The company worked on projects namely for the French-Canadian Artist Union (UDA), Astral Media, Equisoft, Quebec’s professional farmers’ union (UPA), Rolls-Royce and Rogers Media.",
+      "summary": "As a Web Developer and Co-Founder, my role was to lead and architect all Web Development work related to the FrontEnd stack. I would be in touch with Graphic Designers and Project Managers to create Valid HTML/CSS markup that reflects the designs, and to work on all Web Browsers of the moment. My work would take Adobe Photoshop and PDFs document and create HTML/CSS Static style guides (minimal JavaScript, no backend) to create CSS pattern libraries. As a Co-Founder, I had the authority to validate and review code quality when using HTML/CSS patterns generated by the Web Back-end Stack (Symfony 1, Symfony 2, Zend Framework, ASP.NET).",
+      "highlights": [
+        "Participated in a major Web site rewrite for UDA.ca from .NET into PHP with Symfony1.x, responsible of two search-engine modules and HTML/CSS patterns libraries (2010-2012)",
+        "Created complex e-mail delivery systems to handle bounces at the server level and participated in the creation of a Web-based frontend (2011)",
+        "Created an early ”Offline first” HTML5 news reader for iPad (2010)",
+        "Participated in building and maintaining a major public-facing Web application that had been deployed in many cities around the globe (2010-2012)"
+      ],
+      "technologies": [
+        "Vagrant",
+        "Symfony2",
+        "symfony1.x",
+        "PHP",
+        "WordPress",
+        "Tiki Wiki CMS/Groupware",
+        "MySQL",
+        "HTML/CSS",
+        "VMWare ESXi",
+        "Subversion",
+        "Git",
+        "Twitter Bootstrap",
+        "Apache Solr",
+        "Node.js",
+        "LESSCSS",
+        "SASS",
+        "Compass",
+        "Yeoman",
+        "Bower",
+        "Grunt",
+        "EJS",
+        "jQuery",
+        "JavaScript"
+      ]
+    },
+    {
+      "name": "Groupe Informatique TechSolCom Inc.",
+      "company": "Groupe Informatique TechSolCom Inc.",
+      "position": "Web Developer",
+      "location": "Montréal, QC, Canada",
+      "remote": false,
+      "contract": false,
+      "url": "http://techsolcom.ca",
+      "website": "http://techsolcom.ca",
+      "hidden": false,
+      "startDate": "2006-10-01",
+      "endDate": "2009-08-01",
+      "description": "Groupe Informatique TechSolCom Inc. had been merged into R3D Conseil Inc. R3D Conseil Inc is located in Montréal, QC, Canada and is part of the Consulting Services Industry. R3D Conseil Inc has 320 total employees across all of its locations and generates 62.21 million in sales (USD). There are 6 companies in the R3D Conseil Inc corporate family.",
+      "summary": "My role was to maintain the company corporate image on the web, maintain their Web site, and participate in projects run internally as a Web developer.",
+      "highlights": [
+        "Contributed to many projects as Front-End Developer",
+        "Participated in maintaining company internal network, testing DataPower blade, Virtualized servers on bare metal, and web hosting infrastructure",
+        "Built a monitoring service using the SNMP protocol, centralized syslog server, and configured a Nagios monitoring service (2009)",
+        "Participated in making many Web applications as a Front-End developer including an inventory Web Application and a Continuous Delivery system"
+      ],
+      "technologies": [
+        "jQuery",
+        "HTML/CSS",
+        "WCAG",
+        "JavaScript",
+        "Subversion",
+        "CVS",
+        "IBM WebSphere DataPower",
+        "Ant",
+        "Apache Tomcat",
+        "Bind",
+        "SNMP",
+        "Maven2",
+        "Nagios",
+        "XML/XSL/XSLT",
+        "MooTools",
+        "YUI 2",
+        "Debian GNU/Linux",
+        "RedHat Enterprise Linux"
+      ]
+    },
+    {
+      "name": "Câble Axion Digitel",
+      "company": "Câble Axion Digitel",
+      "position": "Web Developer",
+      "location": "Magog, QC, Canada",
+      "remote": false,
+      "contract": false,
+      "url": "http://www.axion.ca/acc/accueil.php?lang=fr",
+      "website": "http://www.axion.ca/acc/accueil.php?lang=fr",
+      "hidden": true,
+      "startDate": "2005-10-01",
+      "endDate": "2006-11-01",
+      "description": "Câble Axion is a cable service provider. Their network coverage goes from Montreal South Shore, follows the US borders, and go up until the “Beauce” area in the province of Quebec. The towns in between the Eastern- Townships and Québec City.",
+      "summary": "My role was to rewrite the corporate website, maintain internal applications and answer to level-2 support calls from subscribers.",
+      "highlights": [],
+      "technologies": [
+        "PHP",
+        "HTML/CSS",
+        "Microsoft Access",
+        "MySQL",
+        "Sun OS (Solaris)",
+        "CentOS GNU/Linux",
+        "Subversion"
+      ]
+    },
+    {
+      "name": "INEXIS Solution web Inc.",
+      "company": "INEXIS Solution web Inc.",
+      "location": "Sherbrooke, QC, Canada",
+      "remote": false,
+      "contract": false,
+      "position": "Web Developer, President",
+      "hidden": true,
+      "startDate": "2002-02-01",
+      "endDate": "2006-11-01",
+      "summary": "INEXIS Solution web Inc., was a one-man web development service provider firm I founded to serve graphic design agencies in the region of the Eastern Townships. Services typically included creating HTML/CSS based on Mock-ups made using Adobe Photoshop/Illustrator by graphic designers were making, creating e-mail templates, and managing hosting services.",
+      "highlights": [],
+      "technologies": [
+        "PHP",
+        "HTML/CSS",
+        "MySQL",
+        "Qmail",
+        "Red-Hat GNU/Linux",
+        "CentOS GNU/Linux",
+        "Subversion"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Udemy",
+      "area": "Web Development",
+      "studyType": "Online Training",
+      "startDate": "2019-07-01",
+      "courses": ["Nuxt.js - Vue.js on Steroids", "Understanding TypeScript"]
+    },
+    {
+      "institution": "EggHead.io",
+      "area": "Web Development",
+      "studyType": "Online Training",
+      "startDate": "2019-07-01",
+      "url": "https://egghead.io",
+      "courses": [
+        "Use Types Effectively in TypeScript",
+        "Up and Running with TypeScript",
+        "Get Started with ElasticSearch",
+        "Build a Server Rendered Vue.js App with Nuxt and Vuex"
+      ]
+    },
+    {
+      "institution": "VueMastery",
+      "area": "Web Development",
+      "studyType": "Online Training",
+      "startDate": "2019-05-01",
+      "url": "https://www.vuemastery.com/courses/",
+      "courses": [
+        "Real World Vue.js",
+        "Mastering Vuex",
+        "Next-Level Vue",
+        "Scaling Vue with Nuxt.js",
+        "Advanced Components"
+      ]
+    },
+    {
+      "institution": "Pearson Vue",
+      "area": "Software development",
+      "studyType": "Certification",
+      "startDate": "2013-07-01",
+      "endDate": "2013-07-01",
+      "url": "https://www.zend.com/en/yellow-pages/ZEND011184",
+      "courses": ["Zend Certified Engineer PHP 5.3"]
+    },
+    {
+      "institution": "McGill University",
+      "area": "Continuing Studies",
+      "studyType": "Course",
+      "startDate": "2012-09-01",
+      "endDate": "2013-12-01",
+      "courses": [
+        "CEEN-421-761 - English in Written Communication Contexts",
+        "CMSC-000-781 - Foundations of Mathematics",
+        "CMSC-101-771 - College Algebra and Functions"
+      ]
+    },
+    {
+      "institution": "University of Montreal",
+      "area": "Continuing Studies",
+      "studyType": "Course",
+      "startDate": "2008-02-01",
+      "endDate": "2008-07-01",
+      "courses": [
+        "Web Accessibility (WCAG 1) at the Nazareth & Louis Braille institute"
+      ]
+    },
+    {
+      "institution": "IBM",
+      "area": "Software development",
+      "studyType": "Certification",
+      "startDate": "2007-07-01",
+      "endDate": "2007-07-01",
+      "courses": ["IBM WebSphere DataPower SOA Appliance"]
+    },
+    {
+      "institution": "Canadian Armed Forces",
+      "area": "Army Communication and Information Systems Specialist",
+      "studyType": "Millitary Career",
+      "startDate": "1997-07-01",
+      "endDate": "2000-01-01",
+      "courses": [
+        "Basic training at Royal Military College Saint-Jean",
+        "Private (Basic), assigned to Sherbrooke 714th Communication Squadron",
+        "Wired and wireless communication and information systems (Introductory training)",
+        "Winter warfare training"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Grenier D’Or — Agence RED/Evocatio",
+      "date": "2010-01-01",
+      "awarder": "Grenier Aux Nouvelles",
+      "summary": "Agence RED and Evocatio Solutions technologiques Inc. created an online game as a corporate Holiday Card sent to its business partners. Each participants would receive a post card on which a 4 character code would give them access to their currently assigned gift. Each participant could steal another participant’s gift to a maximum of 9 times until a specific date at midnight, Montréal time."
+    }
+  ],
+  "publications": [
+    {
+      "name": "« Techniques pour déployer WordPress de façon consistante et les rendre résilients »",
+      "publisher": "WordCamp Montréal 2016",
+      "locale": "fr-CA",
+      "type": "Talk",
+      "releaseDate": "2016-07-01",
+      "url": "http://renoirb.com/talks/2016-Techniques-pour-deployer-WordPress-de-facon-consistante-et-le-rendre-resilient/",
+      "website": "http://renoirb.com/talks/2016-Techniques-pour-deployer-WordPress-de-facon-consistante-et-le-rendre-resilient/",
+      "video": "https://wordpress.tv/2016/12/09/renoir-boulanger-techniques-pour-deployer-wordpress-de-facon-consistante-et-les-rendre-resilients/",
+      "summary": "Talk given at WordCamp Montréal 2016"
+    },
+    {
+      "name": "“Packaging for easier redeployment”",
+      "publisher": "DevOps Montréal",
+      "locale": "en-CA",
+      "type": "Talk",
+      "releaseDate": "2015-10-01",
+      "url": "http://renoirb.com/talks/Achieve-consistent-deployments-leveraging-packaging/",
+      "website": "http://renoirb.com/talks/Achieve-consistent-deployments-leveraging-packaging/",
+      "summary": "Presented at two events, DevOps Montréal, PHP Québec."
+    },
+    {
+      "name": "Santachè, A. “Mobile development using web technologies focusing on games”",
+      "publisher": "ACM",
+      "locale": "en-CA",
+      "type": "Paper",
+      "releaseDate": "2013-11-01",
+      "url": "https://doi.org/10.1145/2526188.2528541",
+      "website": "https://doi.org/10.1145/2526188.2528541",
+      "isbn": "978-1-4503-2559-2",
+      "authors": [
+        "Boulanger, R.",
+        "Viana, G.",
+        "Panaggio, R.",
+        "Melo, B.",
+        "Aboud, H."
+      ],
+      "summary": "Participated in chapters related to “Markup architecture”, “Events” and “Web Storage”"
+    },
+    {
+      "name": "Kumar, J. “Apache Solr PHP Integration”",
+      "publisher": "Pakt Publishing",
+      "locale": "en-CA",
+      "type": "Book Review",
+      "releaseDate": "2013-10-01",
+      "url": "https://www.packtpub.com/big-data-and-business-intelligence/apache-solr-php-integration",
+      "website": "https://www.packtpub.com/big-data-and-business-intelligence/apache-solr-php-integration",
+      "isbn": "9781782164920",
+      "summary": "Book review"
+    },
+    {
+      "name": "« Comment évaluer le niveau de qualité d’un site web selon les techniques d’intégration web d’actualité. »",
+      "publisher": "Web à Québec 2013",
+      "locale": "fr-CA",
+      "type": "Talk",
+      "releaseDate": "2013-10-01",
+      "url": "http://2013.webaquebec.org/#/horaire/vendredi/evaluer-la-qualite-dun-site-selon-les-techniques-dintegration-64.html",
+      "website": "http://2013.webaquebec.org/#/horaire/vendredi/evaluer-la-qualite-dun-site-selon-les-techniques-dintegration-64.html",
+      "summary": "Presented at two conferences; «Montreal WebIn», and «Web à Québec» (WAQ)\n"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Frameworks",
+      "keywords": [
+        "Nuxt.js",
+        "Vue.js",
+        "Jest",
+        "Element UI",
+        "Rush.js",
+        "Koa.js",
+        "AVA",
+        "Backbone.js",
+        "Marionette.js",
+        "Symfony",
+        "Mocha",
+        "Jasmine",
+        "Babel",
+        "Rollup",
+        "Angular"
+      ]
+    },
+    {
+      "name": "Web Development Languages",
+      "level": "Master",
+      "keywords": ["TypeScript", "JavaScript", "ECMAScript", "HTML/CSS", "PHP"]
+    },
+    { "name": "Programming", "keywords": ["VCL", "Bash", "Python"] },
+    {
+      "name": "Web Platform",
+      "level": "Master",
+      "keywords": [
+        "HTML/CSS Architecture",
+        "Bundling",
+        "Transpilation",
+        "Deployment",
+        "Promises",
+        "Polyfills",
+        "Adaptative",
+        "Responsive"
+      ]
+    },
+    {
+      "name": "Web Operations",
+      "level": "Master",
+      "keywords": [
+        "Configuration Management",
+        "Service Monitoring",
+        "Self-Healing event handlers",
+        "SaltStack",
+        "Node.js",
+        "ElasticSearch",
+        "Prometheus",
+        "Redis",
+        "Varnish",
+        "Docker Swarm",
+        "Dockerflow"
+      ]
+    }
+  ],
+  "languages": [
+    { "language": "Français", "fluency": "Native speaker" },
+    { "language": "English", "fluency": "Second language" }
+  ],
+  "interests": [
+    {
+      "name": "Web Platform",
+      "keywords": ["Performance", "Protocols", "Web Standards"]
+    },
+    {
+      "name": "Systems Engineering",
+      "keywords": [
+        "Tracing",
+        "Distributed computing",
+        "Load-Balancing",
+        "Fault tolerance"
+      ]
+    },
+    {
+      "name": "Sci-Fi",
+      "keywords": ["StarTrek", "Doctor Who", "Paralel Universes"]
+    }
+  ]
+}
