@@ -1,4 +1,22 @@
+/*!
+ * https://renoirb.com/esm-modules/stringificator-boolean.mjs v1.0.0
+ *
+ * Maintainer: Renoir Boulanger <contribs@renoirboulanger.com>
+ *
+ * MIT
+ *
+ * © 2003-2023 Renoir Boulanger
+ */
+
+/**
+ * UI Framework less utility to convert a boolean value for emoji.
+ *
+ * Time spent:
+ *   20230208: 2h
+ */
+
 const FORMATS = ['thumb', 'checkmark', 'word']
+
 const isFormatVariant = (value) => {
   if (typeof value === 'string') {
     const pick = String(value).toLowerCase()
@@ -6,16 +24,19 @@ const isFormatVariant = (value) => {
   }
   return false
 }
+
 const assertFormatVariant = (value) => {
   if (!isFormatVariant(value)) {
     const message = `Invalid Boolean Value Format Variant ${value}`
     throw new Error(message)
   }
 }
+
 const formatVariantPick = (formattedAs, fallback = 'checkmark') => {
   const formatName = String(formattedAs).toLowerCase()
   return isFormatVariant(formatName) ? formatName : fallback
 }
+
 const format = (value, formattedAs) => {
   assertFormatVariant(formattedAs)
   let normalizedValue = String(value).toLowerCase()
@@ -58,8 +79,25 @@ const format = (value, formattedAs) => {
   }
   return normalizedValue
 }
+
+const deserialize = (stringified) => {
+  let out = false
+  try {
+    if (/^(true|false)$/i.test(stringified)) {
+      const parsed = JSON.parse(String(stringified).toLowerCase())
+      if (typeof parsed === 'boolean') {
+        out = parsed
+      }
+    }
+  } catch {
+    out = false
+  }
+  return out
+}
+
 export const boolean = {
   FORMATS: Object.freeze([...FORMATS]),
+  deserialize,
   format,
   assertFormatVariant,
   isFormatVariant,
