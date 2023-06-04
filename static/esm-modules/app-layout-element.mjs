@@ -20,25 +20,12 @@
  *   20230211: 2h
  */
 
+import { createLinkStlesheets } from './element-utils.mjs'
+
 const STYLES_EXTERNAL = [
   'https://renoirb.github.io/site/_nuxt/vendors/app.css',
   'https://renoirb.github.io/site/_nuxt/app.css',
 ]
-
-/**
- * Yeah, gotta figure out something better.
- */
-const createLinkStlesheets = ({ document }, elementName) => {
-  const frag = document.createDocumentFragment()
-  for (const href of STYLES_EXTERNAL) {
-    const linkElem = document.createElement('link')
-    linkElem.setAttribute('rel', 'stylesheet')
-    linkElem.setAttribute('href', href)
-    linkElem.setAttribute('data-related-to', elementName)
-    frag.appendChild(linkElem)
-  }
-  return frag
-}
 
 const TEMPLATE = `
   <div id="__layout">
@@ -210,6 +197,9 @@ const TEMPLATE = `
 `
 
 const STYLES = `
+  :host {
+    display: block;
+  }
   /**
    * What was as part of a normal root document,
    * but breaks in a CustomElement
@@ -281,7 +271,7 @@ const STYLES_PRINT = `
   }
 `
 
-export class AppLayoutElement extends HTMLElement {
+class AppLayoutElement extends HTMLElement {
   constructor() {
     super()
     const shadow = this.attachShadow({ mode: 'open' })
@@ -301,8 +291,18 @@ export class AppLayoutElement extends HTMLElement {
     elRoot.setAttribute('id', 'app-layout')
     elRoot.appendChild(elBody)
     shadow.appendChild(elRoot)
-    const frags = createLinkStlesheets({ document }, this.localName)
+    /**
+     * This is uggly, to add CSS to the parent. But whatever. For now
+     */
+    const frags = createLinkStlesheets(
+      { document },
+      this.localName,
+      STYLES_EXTERNAL,
+    )
     shadow.appendChild(frags)
+    document.head.appendChild(
+      createLinkStlesheets({ document }, this.localName, STYLES_EXTERNAL),
+    )
   }
 
   /**
@@ -321,41 +321,4 @@ export class AppLayoutElement extends HTMLElement {
   */
 }
 
-export const registerCustomElement = (
-  { customElements, document },
-  localName = 'app-layout',
-) => {
-  let pickedName = localName.toLowerCase()
-  if (/^[a-z]([\w\d-])+$/.test(pickedName) === false) {
-    const message = `Invalid element name "${pickedName}", it must only contain letters and dash.`
-    console.warn(message)
-    pickedName = 'app-layout'
-  }
-  if (!customElements.get(pickedName)) {
-    console.log(`OK \t customElements.define <${localName} />`)
-    customElements.define(pickedName, AppLayoutElement)
-    /**
-     * This is uggly, to add CSS to the parent. But whatever. For now
-     */
-    document.head.appendChild(createLinkStlesheets({ document }, pickedName))
-  } else {
-    console.log(
-      `ERR\t customElements.define <${pickedName} />, already defined.`,
-    )
-  }
-}
-
-const registerElement = new URL(import.meta.url).searchParams.get(
-  'registerElement',
-)
-
-/**
- * When we provide ?registerElement, we register to the DOM.
- */
-if (registerElement) {
-  try {
-    window && registerCustomElement(window, registerElement)
-  } catch (e) {
-    console.log(`ERR\t No access to global window: ${e}`)
-  }
-}
+export default AppLayoutElement

@@ -30,7 +30,7 @@ export const parseMarkdown = (fileContents) => {
   // Unfortunately, this implementation does not parse YAML properly
   // so many YAML features and nesting of objects are lost.
   const metadata = converter.getMetadata()
-  console.debug('load-from-github parseMarkdown', { metadata })
+  // console.debug('load-from-github parseMarkdown', { metadata })
   return {
     html,
     metadata,
@@ -55,16 +55,16 @@ export const convertGistFileToHtml = (jsonpData, fileName = 'README.md') => {
   // console.log('step 1b: convertGistFileToHtml', { files, content })
   const { html, metadata } = parseMarkdown(content)
   const payload = { html, frontMatter: metadata, data: dataRest }
-  console.debug('step 1c: convertGistFileToHtml', payload)
+  // console.debug('step 1c: convertGistFileToHtml', payload)
   return payload
 }
 
-export const loadFromGitHub = async (host, gistId, fileName = 'README.md') => {
+const loadFromGitHub = async (host, gistId, fileName = 'README.md') => {
   if (!gistId) {
     const message = `Error: we need a Gist ID`
     throw new Error(message)
   }
-  host.dataset.loadFromGitHub = gistId
+  host.dataset.loadFromGithub = gistId
   return fetch(`https://api.github.com/gists/${gistId}?callback=shazam`)
     .then((response) => {
       const content = response.text()
@@ -89,7 +89,7 @@ export const loadFromGitHub = async (host, gistId, fileName = 'README.md') => {
     .then(({ html = '', data = {} }) => {
       // TODO: Make this not specific to Markdown to HTML.
       //       ... So that we break out this bit too.
-      console.debug('step 3: loadFromGitHub then', data)
+      // console.debug('step 3: loadFromGitHub then', data)
       host.innerHTML = html
       const title = Reflect.get(data, 'description')
       if (title) {
@@ -100,6 +100,7 @@ export const loadFromGitHub = async (host, gistId, fileName = 'README.md') => {
         const link = host.ownerDocument.createElement('a')
         link.textContent = 'Source Gist'
         link.setAttribute('href', gistUrl)
+        host.dataset.loadFromGithub = gistUrl
         link.setAttribute('target', '_blank')
         const p = host.ownerDocument.createElement('p')
         p.setAttribute('lang', 'en')
@@ -110,3 +111,5 @@ export const loadFromGitHub = async (host, gistId, fileName = 'README.md') => {
       }
     })
 }
+
+export default loadFromGitHub
