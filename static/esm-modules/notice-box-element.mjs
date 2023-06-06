@@ -1,18 +1,32 @@
-import {
-  isNotNullOrStringEmptyOrNull,
-  createLinkStlesheets,
-} from './element-utils.mjs'
+import { isNotNullOrStringEmptyOrNull } from './element-utils.mjs'
 
 // rel=#MakePurgeCSSNotPurgeThisPlease
 // Idea is to have inventory of all possible permutations
 // so that PurgeCSS won't purge them in the component
 const ALL_VARIANTS = new Set(['info', 'warn', 'error'])
 
+const assertValidVariant = (input) => {
+  if (!ALL_VARIANTS.has(input)) {
+    const these = [...ALL_VARIANTS].join(', ')
+    const message = `Invalid variant "${input}", we only support ${these}`
+    throw new Error(message)
+  }
+}
+
 const DEFAULT_VARIANT = 'info'
 
-const OBSERVED_ATTRIBUTES = Object.freeze(['variant'])
+let SELECTED_DEFAULT_VARIANT = DEFAULT_VARIANT
 
-const pickColor = (type) /*: IColorTextColor */ => {
+// Make it configurable from the outside
+const chosenDefaultVariant = new URL(import.meta.url).searchParams.get(
+  'defaultVariant',
+)
+if (chosenDefaultVariant !== null && chosenDefaultVariant !== '') {
+  assertValidVariant(chosenDefaultVariant)
+  SELECTED_DEFAULT_VARIANT = chosenDefaultVariant
+}
+
+export const colorPicker = (type) /*: IColorTextColor */ => {
   let color = 'yellow'
   // Think about contrast for textColor
   let textColor = 'black'
@@ -65,13 +79,13 @@ export const styleMap = (
     `text-${cfg.textColor}`,
   ]
 
-  outer.push(...outerTokens(pickColor(type)))
-  heading.push(...headingTokens(pickColor(type)))
+  outer.push(...outerTokens(colorPicker(type)))
+  heading.push(...headingTokens(colorPicker(type)))
 
   if (andRestForHackishPostCssThing) {
     for (const other of [...allTypes]) {
-      outer.push(...outerTokens(pickColor(other)))
-      heading.push(...headingTokens(pickColor(other)))
+      outer.push(...outerTokens(colorPicker(other)))
+      heading.push(...headingTokens(colorPicker(other)))
     }
   }
 
@@ -81,27 +95,20 @@ export const styleMap = (
   }
 }
 
-const assertValidVariant = (input) => {
-  if (!ALL_VARIANTS.has(input)) {
-    const these = [...ALL_VARIANTS].join(', ')
-    const message = `Invalid variant "${input}", we only support ${these}`
-    throw new Error(message)
-  }
-}
-
 class NoticeBoxElement extends HTMLElement {
   static get observedAttributes() {
-    return OBSERVED_ATTRIBUTES
+    return Object.freeze(['variant'])
   }
 
   get variant() {
     if (this.hasAttribute('variant')) {
       return this.getAttribute('variant')
     }
-    return DEFAULT_VARIANT
+    return SELECTED_DEFAULT_VARIANT
   }
 
-  set variant(input = DEFAULT_VARIANT) {
+  set variant(input = SELECTED_DEFAULT_VARIANT) {
+    console.log(`${this.constructor.name}.set variant`, { variant: input })
     if (isNotNullOrStringEmptyOrNull(input)) {
       assertValidVariant(input)
       const changed = this.variant !== input
@@ -113,11 +120,39 @@ class NoticeBoxElement extends HTMLElement {
     super()
     const shadowRoot = this.attachShadow({ mode: 'open' })
     const template = document.createElement('template')
+
+    console.log(`${this.constructor.name}.constructor`, {
+      variant: this.variant,
+    })
+
     template.innerHTML = `
       <style>
         :host {
           display: block;
+
+          /** TODO Make configurable **/
+          --color-sandwich-bg: #000;
+          --color-sandwich-left-splat-bg: #bdbdbd;
+          --color-sandwich-text: #fff;
+          --color-container: #f9f9f9;
+          --color-backdrop: #e5e5e5;
+          --bg: var(--color-backdrop);
+          --color: #577f79;
+          --color-title: #262626;
+          --color-subtitle: #999;
+          --color-primary: #214761;
+          --color-secondary: #bb3f3f;
+          --color-tertiary: #cb7723;
+          --bg-secondary: #e5e5e5;
+          --border-color: #aaa;
+          --color-taxonomy-bg: #bdbdbd;
+          --color-taxonomy-bg-hover: #959595;
+          --color-taxonomy-text-hover: #fff;
+          --color-taxonomy-text: #fff;
+          --color-container-text-link: var(--color-primary);
+          --color-container-text-link-hover: var(--color-secondary);
         }
+
         .disposition-parent {
           padding: .75rem 1rem;
           border-radius: .5rem;
@@ -198,6 +233,7 @@ class NoticeBoxElement extends HTMLElement {
 
   _setHeaderTitle(textContent) {
     const target = this.shadowRoot.querySelector('slot[name="header"]')
+    console.log(`${this.constructor.name}._setHeaderTitle`, { target })
     if (target) {
       target.textContent = textContent
     }
@@ -205,6 +241,7 @@ class NoticeBoxElement extends HTMLElement {
 
   _setDataType(alertType) {
     const target = this.shadowRoot.querySelector('[data-alert-type]')
+    console.log(`${this.constructor.name}._setDataType`, { target })
     if (target) {
       target.dataset.alertType = alertType
     }
@@ -242,6 +279,12 @@ class NoticeBoxElement extends HTMLElement {
   attributeChangedCallback(name, oldValue, newValue) {
     const changedWithValue =
       oldValue !== newValue && isNotNullOrStringEmptyOrNull(newValue)
+    console.log(`${this.constructor.name}.attributeChangedCallback`, {
+      name,
+      oldValue,
+      newValue,
+      changedWithValue,
+    })
     if (changedWithValue) {
       if (name === 'variant') {
         try {
@@ -249,8 +292,8 @@ class NoticeBoxElement extends HTMLElement {
           this._setHeaderTitle(newValue)
           this._handle(newValue)
         } catch {
-          this.setAttribute('variant', DEFAULT_VARIANT)
-          this._handle(DEFAULT_VARIANT)
+          this.setAttribute('variant', SELECTED_DEFAULT_VARIANT)
+          this._handle(SELECTED_DEFAULT_VARIANT)
         }
       }
     }

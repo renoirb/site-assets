@@ -37,6 +37,23 @@ export const parseMarkdown = (fileContents) => {
   }
 }
 
+const extractContent = (jsonpData, fileName = 'README.md') => {
+  // console.log('step 1a: convertGistFileToHtml', jsonpData)
+  const { data = {} } = jsonpData
+  const { files = {} } = data
+  const fileContents = Reflect.has(files, fileName)
+    ? Reflect.get(files, fileName)
+    : {}
+  const { content = '' } = fileContents
+  const payload = {
+    fileName,
+    content,
+    ...data,
+  }
+  // console.debug('extractContent', payload)
+  return payload
+}
+
 /**
  * Convert the contents of a Gist, assuming it's Markdown, into HTML.
  *
@@ -45,21 +62,19 @@ export const parseMarkdown = (fileContents) => {
  * @returns string HTML of the gist's file
  */
 export const convertGistFileToHtml = (jsonpData, fileName = 'README.md') => {
-  // console.log('step 1a: convertGistFileToHtml', jsonpData)
-  const { data = {} } = jsonpData
-  const { files = {}, forks = [], ...dataRest } = data
-  const fileContents = Reflect.has(files, fileName)
-    ? Reflect.get(files, fileName)
-    : {}
-  const { content = '' } = fileContents
-  // console.log('step 1b: convertGistFileToHtml', { files, content })
+  const { content = '', ...dataRest } = extractContent(jsonpData, fileName)
   const { html, metadata } = parseMarkdown(content)
   const payload = { html, frontMatter: metadata, data: dataRest }
   // console.debug('step 1c: convertGistFileToHtml', payload)
   return payload
 }
 
-const loadFromGitHub = async (host, gistId, fileName = 'README.md') => {
+const loadFromGitHub = async (
+  host,
+  gistId,
+  fileName = 'README.md',
+  convertMarkdown = true,
+) => {
   if (!gistId) {
     const message = `Error: we need a Gist ID`
     throw new Error(message)
@@ -76,13 +91,19 @@ const loadFromGitHub = async (host, gistId, fileName = 'README.md') => {
       let innerHTML = '<p>Nothing.</p>'
       let dataRest = {}
       // TODO: Make this not specific to Markdown to HTML.
-      transform(function (jsonp) {
+      transform(function (jsonpData) {
         // For now, only support one file. TODO
-        const contents = convertGistFileToHtml(jsonp, fileName)
-        // console.log('step 2: loadFromGitHub then transform', contents);
-        const { html = '', ...rest } = contents
-        dataRest = rest
-        innerHTML = html
+        if (convertMarkdown) {
+          const contents = convertGistFileToHtml(jsonpData, fileName)
+          // console.log('step 2: loadFromGitHub then transform', contents);
+          const { html = '', ...rest } = contents
+          dataRest = rest
+          innerHTML = html
+        } else {
+          const { content = '', ...rest } = extractContent(jsonpData, fileName)
+          dataRest = rest
+          innerHTML = content
+        }
       })
       return { html: innerHTML, ...dataRest }
     })
