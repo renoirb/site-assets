@@ -22,7 +22,7 @@ const contentParser = async (opts = {}) => {
 }
 
 const main = async ({ components = [], utils = [] }) => {
-  const selectedComponents = [...OUR_COMPONENTS, ...components]
+  const selectedComponents = new Map([...OUR_COMPONENTS, ...components])
   for (const [name, path] of selectedComponents) {
     const imported = await import(path)
     const classObj = imported?.default

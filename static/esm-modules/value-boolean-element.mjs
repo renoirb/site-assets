@@ -1,5 +1,5 @@
 /*!
- * https://renoirb.com/esm-modules/value-boolean-element.js v1.0.0
+ * https://renoirb.com/esm-modules/value-boolean-element.mjs v1.0.0
  *
  * Maintainer: Renoir Boulanger <contribs@renoirboulanger.com>
  *

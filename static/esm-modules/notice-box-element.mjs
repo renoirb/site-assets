@@ -108,7 +108,7 @@ class NoticeBoxElement extends HTMLElement {
   }
 
   set variant(input = SELECTED_DEFAULT_VARIANT) {
-    console.log(`${this.constructor.name}.set variant`, { variant: input })
+    // console.log(`${this.constructor.name}.set variant`, { variant: input })
     if (isNotNullOrStringEmptyOrNull(input)) {
       assertValidVariant(input)
       const changed = this.variant !== input
@@ -121,9 +121,9 @@ class NoticeBoxElement extends HTMLElement {
     const shadowRoot = this.attachShadow({ mode: 'open' })
     const template = document.createElement('template')
 
-    console.log(`${this.constructor.name}.constructor`, {
-      variant: this.variant,
-    })
+    // console.log(`${this.constructor.name}.constructor`, {
+    //   variant: this.variant,
+    // })
 
     template.innerHTML = `
       <style>
@@ -233,7 +233,7 @@ class NoticeBoxElement extends HTMLElement {
 
   _setHeaderTitle(textContent) {
     const target = this.shadowRoot.querySelector('slot[name="header"]')
-    console.log(`${this.constructor.name}._setHeaderTitle`, { target })
+    // console.log(`${this.constructor.name}._setHeaderTitle`, { target })
     if (target) {
       target.textContent = textContent
     }
@@ -241,7 +241,7 @@ class NoticeBoxElement extends HTMLElement {
 
   _setDataType(alertType) {
     const target = this.shadowRoot.querySelector('[data-alert-type]')
-    console.log(`${this.constructor.name}._setDataType`, { target })
+    // console.log(`${this.constructor.name}._setDataType`, { target })
     if (target) {
       target.dataset.alertType = alertType
     }
@@ -279,12 +279,12 @@ class NoticeBoxElement extends HTMLElement {
   attributeChangedCallback(name, oldValue, newValue) {
     const changedWithValue =
       oldValue !== newValue && isNotNullOrStringEmptyOrNull(newValue)
-    console.log(`${this.constructor.name}.attributeChangedCallback`, {
-      name,
-      oldValue,
-      newValue,
-      changedWithValue,
-    })
+    // console.log(`${this.constructor.name}.attributeChangedCallback`, {
+    //   name,
+    //   oldValue,
+    //   newValue,
+    //   changedWithValue,
+    // })
     if (changedWithValue) {
       if (name === 'variant') {
         try {

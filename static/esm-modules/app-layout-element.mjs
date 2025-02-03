@@ -5,7 +5,7 @@
  *
  * MIT
  *
- * © 2003-2023 Renoir Boulanger
+ * 2003-2023 Renoir Boulanger
  */
 
 /**
@@ -23,8 +23,8 @@
 import { createLinkStlesheets } from './element-utils.mjs'
 
 const STYLES_EXTERNAL = [
-  'https://renoirb.github.io/site/_nuxt/vendors/app.css',
-  'https://renoirb.github.io/site/_nuxt/app.css',
+  'https://renoirboulanger.com/_nuxt/vendors/app.css',
+  'https://renoirboulanger.com/_nuxt/app.css',
 ]
 
 const TEMPLATE = `
@@ -52,7 +52,7 @@ const TEMPLATE = `
             <div part="slot-parent-top-left">
               <slot name="top-left">
                 <a
-                  href="https://renoirb.github.io/site/"
+                  href="https://renoirboulanger.com/"
                   class="identity__text text-2xl"
                 >
                   Renoir Boulanger
@@ -66,17 +66,17 @@ const TEMPLATE = `
                 class="md:flex md:justify-between md:bg-transparent text-is-italicized hidden"
               >
                 <a
-                  href="https://renoirb.github.io/site/blog"
+                  href="https://renoirboulanger.com/blog/"
                   class="hover:opacity-100 opacity-80 hover:underline flex items-center p-3 px-4 py-2 mr-2 font-medium text-center rounded"
                 >
                   Blog </a
                 ><a
-                  href="https://renoirb.github.io/site/resume"
+                  href="https://renoirboulanger.com/resume/as-code/"
                   class="hover:opacity-100 opacity-80 hover:underline flex items-center p-3 px-4 py-2 mr-2 font-medium text-center rounded"
                 >
                   Resume </a
                 ><a
-                  href="https://renoirb.github.io/site/hello"
+                  href="https://renoirboulanger.com/hello"
                   class="hover:opacity-100 opacity-80 hover:underline flex items-center p-3 px-4 py-2 mr-2 font-medium text-center rounded"
                 >
                   About
@@ -92,7 +92,7 @@ const TEMPLATE = `
             class="app-side-bar__identity flex items-center w-full h-16 p-4 border-b"
           >
             <a
-              href="https://renoirb.github.io/site/"
+              href="https://renoirboulanger.com/"
               aria-current="page"
               class="identity__text nuxt-link-exact-active nuxt-link-active"
               >Renoir Boulanger</a
@@ -101,19 +101,19 @@ const TEMPLATE = `
           <div part="left-bottom-sidebar">
             <slot name="left-bottom-sidebar">
               <a
-                href="https://renoirb.github.io/site/blog"
+                href="https://renoirboulanger.com/blog"
                 class="hover:bg-teal-500 hover:text-white flex items-center p-4"
                 ><span class="mr-2"> Blog </span></a
               ><a
-                href="https://renoirb.github.io/site/projects"
+                href="https://renoirboulanger.com/projects"
                 class="hover:bg-teal-500 hover:text-white flex items-center p-4"
                 ><span class="mr-2"> Projects </span></a
               ><a
-                href="https://renoirb.github.io/site/resume"
+                href="https://renoirboulanger.com/resume"
                 class="hover:bg-teal-500 hover:text-white flex items-center p-4"
                 ><span class="mr-2"> Resume </span></a
               ><a
-                href="https://renoirb.github.io/site/hello"
+                href="https://renoirboulanger.com/hello"
                 class="hover:bg-teal-500 hover:text-white flex items-center p-4"
                 ><span class="mr-2"> About </span></a
               >
@@ -134,13 +134,13 @@ const TEMPLATE = `
       </main>
       <div class="app-footer--component disposition-parent w-full bottom">
         <footer
-          class="zone__sandwich__bottom container flex items-center justify-between p-10 mx-auto"
+          class="zone__sandwich__bottom container flex items-center justify-between p-10 mx-auto no-print"
           style="position: relative"
         >
-          <dl class="contact items-item disposition-item">
+          <dl class="contact items-item disposition-item no-print">
             <dt class="mb-4 font-serif text-2xl">Contact</dt>
             <dd>
-              Renoir Boulanger ✪ Full-Stack Developer &amp; Web Hosting systems
+              <a href="https://renoirboulanger.com">Renoir Boulanger</a> ✪ Full-Stack Developer &amp; Web Hosting systems
               reliability professional
             </dd>
             <dd class="underline">
@@ -158,14 +158,14 @@ const TEMPLATE = `
             </dd>
             <dd>
               <a
-                href="https://renoirb.github.io/site/files/resume/Resume-Renoir-Boulanger.doc"
+                href="https://renoirboulanger.com/files/resume/Resume-Renoir-Boulanger.doc"
                 target="_blank"
                 >Word</a
               >
             </dd>
             <dd>
               <a
-                href="https://renoirb.github.io/site/files/resume/Resume-Renoir-Boulanger.pdf"
+                href="https://renoirboulanger.com/files/resume/Resume-Renoir-Boulanger.pdf"
                 target="_blank"
                 >PDF</a
               >
@@ -180,10 +180,10 @@ const TEMPLATE = `
             <dl class="see-also">
               <dt>See also…</dt>
               <dd>
-                <a href="https://renoirb.github.io/site/glossary"> Glossary </a>
+                <a href="https://renoirboulanger.com/glossary"> Glossary </a>
               </dd>
               <dd>
-                <a href="https://renoirb.github.io/site/code-review">
+                <a href="https://renoirboulanger.com/code-review">
                   Code-Review notes
                 </a>
               </dd>
@@ -254,7 +254,8 @@ const STYLES_PRINT = `
   #__layout .nuxt-content .app-image,
   #__layout .app-side-bar__identity button,
   #__layout footer.zone__sandwich__bottom .see-also,
-  #__layout .app-side-bar--component {
+  #__layout .app-side-bar--component,
+  .no-print {
     display: none !important;
   }
   #__layout .zone__sandwich__meat.container .grid .m-20 {
@@ -268,6 +269,16 @@ const STYLES_PRINT = `
     color: initial;
     width: 100% !important;
     max-width: initial !important;
+  }
+  a[href]:after {
+    content:" (" attr(href) ")" !important;
+  }
+  abbr[title]:after {
+    content:" (" attr(title) ")" !important;
+  }
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content:"" !important;
   }
 `
 

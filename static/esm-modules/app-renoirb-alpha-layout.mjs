@@ -1,6 +1,4 @@
 /*!
- * https://renoirb.com/talks/Achieve-consistent-deployments-leveraging-packaging/links/
- *
  * https://renoirb.com/esm-modules/app-renoirb-alpha-layout-element.mjs v0.0.0
  *
  * Maintainer: Renoir Boulanger <contribs@renoirboulanger.com>
@@ -134,10 +132,10 @@ const STYLES = `
       display:none;
   }
   .details details summary:after {
-    content: "\25BA"; /* ► */
+    content: '>';
     display: block;
   }
-  .details details[open] summary:after { content: "\25BC"; /* ▼ */ }
+  .details details[open] summary:after { content: '|'; }
   .details details[open] summary { margin-left: -30px; }
   .details details[open] { margin-left: 30px; }
   .details details summary { cursor: zoom-in; }
@@ -252,7 +250,7 @@ const STYLES_PRINT = `
     }
 
     .details .detailed details:not([open]) summary:after {
-      content: "\25B7   (More details available online, you can expand this section if you load my resume in your Web browser)";
+      content: "  (More details available online, you can expand this section if you load my resume in your Web browser)";
       font-size: 0.8em;
     }
   /*}*/
